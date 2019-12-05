@@ -1,11 +1,10 @@
-# BowlingGameProject
-for evaluation test
+# Developer Evaluation Project   
+Please create a library in either C# or JavaScript keep score in a game of bowling. Write a program to score a game of Ten-Pin Bowling.   
 
-Developer Evaluation Project
-Please create a library in either C# or JavaScript keep score in a game of bowling. Write a program to score a game of Ten-Pin Bowling.
-Input: string (described below) representing a bowling game
-Output: integer score
-The scoring rules
+**Input:** string (described below) representing a bowling game   
+**Output:** integer score   </br>
+
+**The scoring rules**   
 Each game, or "line" of bowling, includes ten turns, or "frames" for the bowler.
 In each frame, the bowler gets up to two tries to knock down all ten pins.
 If the first ball in a frame knocks down all ten pins, this is called a "strike". The frame is over. The score
@@ -18,11 +17,13 @@ These bonus throws are taken as part of the same turn. If a bonus ball knocks do
 The game score is the total of all frame scores.
 
 
-Examples  
-X indicates a strike  
-/ indicates a spare  
-- indicates a miss  
-| indicates a frame boundary</br> The characters after the || indicate bonus balls  
+*Examples*  
+X indicates a strike
+
+/ indicates a spare      
+'-' indicates a miss  
+| indicates a frame boundary</br> 
+The characters after the || indicate bonus balls  
 ----
 X|X|X|X|X|X|X|X|X|X||XX  
 Ten strikes on the first ball of all ten frames.  
