@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # BowlingGameProject
 for evaluation test
 
@@ -9,15 +8,6 @@ Please create a library in either C# or JavaScript keep score in a game of bowli
 **Output:** integer score
 
 **The scoring rules**
-=======
-# Developer Evaluation Project   
-Please create a library in either C# or JavaScript keep score in a game of bowling. Write a program to score a game of Ten-Pin Bowling.   
-
-**Input:** string (described below) representing a bowling game   
-**Output:** integer score   </br>
-
-**The scoring rules**   
->>>>>>> 433ab36398def12dddd894ec690cd47bd0823b1d
 Each game, or "line" of bowling, includes ten turns, or "frames" for the bowler.
 In each frame, the bowler gets up to two tries to knock down all ten pins.
 If the first ball in a frame knocks down all ten pins, this is called a "strike". The frame is over. The score
@@ -30,7 +20,6 @@ These bonus throws are taken as part of the same turn. If a bonus ball knocks do
 The game score is the total of all frame scores.
 
 
-<<<<<<< HEAD
 
 **Examples**
 X indicates a strike
@@ -89,39 +78,7 @@ Each Bonus-throw start with the original starting 10-pins.
 The Loggin part would be developed separatly.
 The following white-spaces will be removed: leading and trailing for the whole input, before the Bonus-part, trailing for the Frames-part.
 
+
 **For Devs:**
 Assumes that all bowling games types will require following parameters: Maximum Frames Number, Starting Pins Number, Frames List.
 A CommonGameData.cs class should be use to define parameters common for ddifferent bowling games (but with different values).
-=======
-*Examples*  
-X indicates a strike
-
-/ indicates a spare      
-'-' indicates a miss  
-| indicates a frame boundary</br> 
-The characters after the || indicate bonus balls  
-----
-X|X|X|X|X|X|X|X|X|X||XX  
-Ten strikes on the first ball of all ten frames.  
-Two bonus balls, both strikes.  
-Score for each frame == 10 + score for next two balls == 10 + 10 + 10 == 30  
-Total score == 10 frames x 30 == 300  
-----
-9-|9-|9-|9-|9-|9-|9-|9-|9-|9-||  
-Nine pins hit on the first ball of all ten frames.  
-Second ball of each frame misses last remaining pin.  
-No bonus balls.  
-Score for each frame == 9  
-Total score == 10 frames x 9 == 90  
----
-5/|5/|5/|5/|5/|5/|5/|5/|5/|5/||5  
-Five pins on the first ball of all ten frames.  
-Second ball of each frame hits all five remaining pins, a spare.  
-One bonus ball, hits five pins.  
-Score for each frame == 10 + score for next one  
-ball == 10 + 5 == 15  
-Total score == 10 frames x 15 == 150  
----
-X|7/|9-|X|-8|8/|-6|X|X|X||81  
-Total score == 167
->>>>>>> 433ab36398def12dddd894ec690cd47bd0823b1d
