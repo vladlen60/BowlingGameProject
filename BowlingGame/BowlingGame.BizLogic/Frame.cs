@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BowlingGame.BizLogic
 {
@@ -18,7 +14,7 @@ namespace BowlingGame.BizLogic
         public int StartingPinsNumber { get; set; }
 
 
-        public Frame(bool isFinalFrame, int startingPinsNumber = 0)
+        public Frame(bool isFinalFrame, int startingPinsNumber)
         {
             this.IsFinalFrame = isFinalFrame;
             this.StartingPinsNumber = startingPinsNumber;

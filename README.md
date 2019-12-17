@@ -82,3 +82,15 @@ The following white-spaces will be removed: leading and trailing for the whole i
 **For Devs:**
 Assumes that all bowling games types will require following parameters: Maximum Frames Number, Starting Pins Number, Frames List.
 A CommonGameData.cs class should be use to define parameters common for ddifferent bowling games (but with different values).
+
+The End-user will use only .ShowScore() method. The 3rd party apps also will mostly be using the same .ShowScore() method. Thus most of the logic and methods are hidden from the outside users.
+
+**The following diagram shows the flow of the program:**
+
+```flow
+st=>start: Program.cs
+op=>operation: TenPinsGames.cs
+e=>end
+
+st->op->e
+```

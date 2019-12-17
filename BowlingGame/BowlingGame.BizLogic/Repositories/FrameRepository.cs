@@ -20,11 +20,11 @@ namespace BowlingGame.BizLogic.Repositories
             char[] frameCharArr = frame.ToCharArray();
             foreach (char c in frameCharArr)
             {
-                ThrowCharProcessor throwProcessor = new ThrowCharProcessor();
-                throwProcessor.ConvertCharIntoDigitalValueForThrow(c, framesList.Last(), startingPinsNumber);
-                throwProcessor.SetThrowTypeBasedOnThrowChar(c, framesList.Last());
-                throwProcessor.SetFrameClosedFlagBasedOnThrowChar(c, framesList.Last());
-                SetIsOverFlagForTheFrame(framesList.Last(), startingPinsNumber);
+                ThrowCharProcessor _throwProcessor = new ThrowCharProcessor();
+                _throwProcessor.ConvertCharIntoDigitalValueForThrow(c, framesList.Last(), startingPinsNumber);
+                _throwProcessor.SetThrowTypeBasedOnThrowChar(c, framesList.Last());
+                _throwProcessor.SetFrameClosedFlagBasedOnThrowChar(c, framesList.Last());
+                SetIsOverFlagForTheFrame(framesList.Last());
                 SetIsFinalFlagForTheFrame(framesList, maxFramesNumber);
                 CalculateKnockedDownPins(framesList.Last(), startingPinsNumber);
             }
@@ -46,7 +46,7 @@ namespace BowlingGame.BizLogic.Repositories
                 throw new ArgumentException("It seems that you're trying to process Bonus while not on the Last Frame. Please check.");
 
             char[] bonusCharArr = bonusString.ToCharArray();
-            ThrowCharProcessor throwProcessor = new ThrowCharProcessor();
+            ThrowCharProcessor _throwProcessor = new ThrowCharProcessor();
             if (lastFrame.IsStrike)
             {
                 if (bonusCharArr.Length > 2)
@@ -54,7 +54,7 @@ namespace BowlingGame.BizLogic.Repositories
 
                 foreach (char c in bonusCharArr)
                 {
-                    throwProcessor.ConvertCharIntoDigitalValueForThrow(c, lastFrame, startingPinsNumber);
+                    _throwProcessor.ConvertCharIntoDigitalValueForThrow(c, lastFrame, startingPinsNumber);
                 }
             }
             else if (lastFrame.IsSpare)
@@ -62,7 +62,7 @@ namespace BowlingGame.BizLogic.Repositories
                 if (bonusCharArr.Length != 1)
                     throw new ArgumentException($"The number of bonus throws {bonusCharArr.Length}, is over allowed for the Last Spare. Please check.");
 
-                throwProcessor.ConvertCharIntoDigitalValueForThrow(bonusCharArr[0], lastFrame, startingPinsNumber);
+                _throwProcessor.ConvertCharIntoDigitalValueForThrow(bonusCharArr[0], lastFrame, startingPinsNumber);
             }
         }
 
@@ -70,18 +70,12 @@ namespace BowlingGame.BizLogic.Repositories
         /// Sets IsFinalFrame and IsFrameOver flags for a frame in the List
         /// </summary>
         /// <param name="lastFrame"></param>
-        /// <param name="startingPinsNumber"></param>
-        private void SetIsOverFlagForTheFrame(Frame lastFrame, int startingPinsNumber)
+        private void SetIsOverFlagForTheFrame(Frame lastFrame)
         {
-
             if (!lastFrame.IsFinalFrame)
             {
                 if (lastFrame.ThrowsList.Count == 2)
                     lastFrame.IsFrameOver = true;
-
-                if (lastFrame.IsFrameOver && lastFrame.KnockedDownPinsCount > startingPinsNumber)
-                    throw new ArgumentException($"The count of Kicked down pins {lastFrame.KnockedDownPinsCount} " +
-                                                $"is higher than the actual Starting pins number of {startingPinsNumber}. Please check.");
             }
         }
 

@@ -42,7 +42,6 @@ namespace BowlingGame.BizLogic
                 Console.WriteLine("#=====#");
             }
 
-
             Console.WriteLine("Thank you for playing with us!");
             Console.WriteLine("Have a nice day!");
             Console.Read();

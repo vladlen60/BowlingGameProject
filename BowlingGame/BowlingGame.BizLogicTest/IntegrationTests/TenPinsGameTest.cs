@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using BowlingGame.BizLogic;
+using BowlingGame.BizLogic.Data;
 using BowlingGame.BizLogic.Games;
-using BowlingGame.BizLogic.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BowlingGame.BizLogicTest.IntegrationTests
@@ -234,7 +232,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -257,7 +254,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -281,7 +277,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -305,7 +300,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -329,7 +323,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (InvalidOperationException ex)
             {
@@ -353,7 +346,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -377,7 +369,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentOutOfRangeException ex)
             {
@@ -400,7 +391,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -424,7 +414,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -448,7 +437,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -472,7 +460,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -496,7 +483,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -520,7 +506,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -544,7 +529,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -568,7 +552,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -582,7 +565,7 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
         [TestMethod]
         [Priority(2)]
         [TestCategory("NegativeCases")]
-        [Description("Tests Failed on game with too with Knocked-down pins count more than StartingPinsNumber.")]
+        [Description("Tests Failed on game with Knocked-down pins count more than StartingPinsNumber.")]
         public void TestsFailedOnGameWithKnowckedDownPinsHigherThanStartingPins()
         {
             //-- Arrange
@@ -592,7 +575,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -616,7 +598,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -640,7 +621,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -664,7 +644,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -688,7 +667,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -713,7 +691,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.CalculateScore(startingPinsNumber);
-
             }
             catch (ArgumentException ex)
             {
@@ -738,7 +715,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentNullException)
             {
@@ -761,7 +737,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentNullException)
             {
@@ -784,7 +759,6 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
@@ -808,11 +782,60 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
             try
             {
                 game.ShowScore(gameInput);
-
             }
             catch (ArgumentException ex)
             {
                 Assert.AreEqual("The 'Spare' cannot be set on the Bonus Throws, please check.", ex.Message);
+                return;
+            }
+            Assert.Fail("Call did NOT throw the Argument Exception");
+        }
+
+
+        [TestMethod]
+        [Priority(2)]
+        [TestCategory("NegativeCases")]
+        [Description("Tests Failed on game when MaxFramesNumber is Zero.")]
+        public void TestsFailedWhenMaxFramesNumberIsZero()
+        {
+            //-- Arrange
+            TenPinsGame game = new TenPinsGame();
+            string gameInput = "X|7/|9-|x|-8|8/|-6|x|X|X||81";
+            CommonGameData data;
+
+            try
+            {
+                data = new CommonGameData(0, 10);
+                game.ShowScore(gameInput);
+            }
+            catch (ArgumentException ex)
+            {
+                Assert.AreEqual("MaxFrameNumber and StartingPinsNumber has to be higher than 0.", ex.Message);
+                return;
+            }
+            Assert.Fail("Call did NOT throw the Argument Exception");
+        }
+
+
+        [TestMethod]
+        [Priority(2)]
+        [TestCategory("NegativeCases")]
+        [Description("Tests Failed on game when StartingPinsNumber is Zero.")]
+        public void TestsFailedWhenStartingPinsNumberIsZero()
+        {
+            //-- Arrange
+            TenPinsGame game = new TenPinsGame();
+            string gameInput = "X|7/|9-|x|-8|8/|-6|x|X|X||81";
+            CommonGameData data;
+
+            try
+            {
+                data = new CommonGameData(10, 0);
+                game.ShowScore(gameInput);
+            }
+            catch (ArgumentException ex)
+            {
+                Assert.AreEqual("MaxFrameNumber and StartingPinsNumber has to be higher than 0.", ex.Message);
                 return;
             }
             Assert.Fail("Call did NOT throw the Argument Exception");
@@ -824,12 +847,8 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
 
 
 
-
-
-
-
-
         #endregion
+
 
         #region DataDrivenTest
         public TestContext TestContext { get; set; }

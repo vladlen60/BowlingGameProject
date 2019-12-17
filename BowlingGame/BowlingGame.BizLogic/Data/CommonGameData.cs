@@ -1,4 +1,5 @@
-﻿using BowlingGame.BizLogic.Types;
+﻿using System;
+using BowlingGame.BizLogic.Types;
 using System.Collections.Generic;
 
 namespace BowlingGame.BizLogic.Data
@@ -9,10 +10,10 @@ namespace BowlingGame.BizLogic.Data
         public int MaxFramesNumber { get;}
         public int StartingPinsNumber { get; }
         public List<Frame> Frames { get; }
-        public GameType Type { get; set; }
 
         public CommonGameData(int maxFramesNumber, int startingPinsNumber)
         {
+            if (maxFramesNumber <= 0 || startingPinsNumber <= 0) throw new ArgumentException("MaxFrameNumber and StartingPinsNumber has to be higher than 0.");
             MaxFramesNumber = maxFramesNumber;
             StartingPinsNumber = startingPinsNumber;
             Frames = new List<Frame>();

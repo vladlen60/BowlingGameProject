@@ -1,9 +1,9 @@
 ﻿
 namespace BowlingGame.BizLogic.Types
 {
-    public class GameParserType
+    internal class GameParserType
     {
-        public string NormalFramesPart { get; set; }
-        public string BonusThrowsPart { get; set; }
+        internal string NormalFramesPart { get; set; }
+        internal string BonusThrowsPart { get; set; }
     }
 }

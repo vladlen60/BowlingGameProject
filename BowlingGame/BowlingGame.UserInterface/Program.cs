@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using BowlingGame.BizLogic.Data;
+using BowlingGame.BizLogic.Types;
 
 namespace BowlingGame.UserInterface
 {

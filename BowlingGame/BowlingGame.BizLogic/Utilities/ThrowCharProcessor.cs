@@ -16,14 +16,13 @@ namespace BowlingGame.BizLogic.Utilities
             if (char.IsDigit(characterInString))
             {
                 lastFrame.ThrowsList.Add((int)char.GetNumericValue(characterInString));
-                var pinsCount = int.Parse(characterInString.ToString());
                 return;
             }
 
             switch (char.ToUpperInvariant(characterInString))
             {
                 case 'X':
-                    lastFrame.ThrowsList.Add(10);
+                    lastFrame.ThrowsList.Add(startingPinsNumber);
                     return;
                 case '-':
                     lastFrame.ThrowsList.Add(0);

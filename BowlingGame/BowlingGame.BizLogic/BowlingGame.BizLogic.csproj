@@ -62,7 +62,6 @@
     <Compile Include="Repositories\GameRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Types\GameType.cs" />
     <Compile Include="Utilities\GameInputParser.cs" />
     <Compile Include="Utilities\ThrowCharProcessor.cs" />
   </ItemGroup>

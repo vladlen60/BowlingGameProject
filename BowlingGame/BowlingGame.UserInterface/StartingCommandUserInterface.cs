@@ -12,7 +12,7 @@ namespace BowlingGame.UserInterface
             while (!Quit)
             {
                 Console.WriteLine(string.Empty);
-                Console.WriteLine(">> What would you like to do?");
+                Console.WriteLine(">> What would you like to do ('help' for Help)?");
                 var command = Console.ReadLine().ToLowerInvariant();
                 CommandRoute(command);
             }
@@ -60,7 +60,6 @@ namespace BowlingGame.UserInterface
         {
             try
             {
-                //BaseGame game;
                 TenPinsGame game = new TenPinsGame();
                 Console.WriteLine("Game: {0}", gameInput);
                 Console.WriteLine("Score: " + game.ShowScore(gameInput));

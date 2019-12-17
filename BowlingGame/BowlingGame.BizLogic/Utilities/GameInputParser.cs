@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace BowlingGame.BizLogic.Utilities
 {
-    public class GameInputParser
+    internal class GameInputParser
     {
         /// <summary>
         /// Splits game-input string into 2 parts, based on the '||' divider char.

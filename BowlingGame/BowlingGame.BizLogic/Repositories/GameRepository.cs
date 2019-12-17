@@ -26,8 +26,8 @@ namespace BowlingGame.BizLogic.Repositories
                     var isFinalFrame = framesList.Count == maxFramesNumber - 1;
                     framesList.Add(new Frame(isFinalFrame, startingPinsNumber));
                 }
-                FrameRepository framerepo = new FrameRepository();
-                framerepo.ProcessFrameStringIntoFrameProperties(frame, framesList, maxFramesNumber, startingPinsNumber);
+                FrameRepository _framerepo = new FrameRepository();
+                _framerepo.ProcessFrameStringIntoFrameProperties(frame, framesList, maxFramesNumber, startingPinsNumber);
             }
 
             if (framesList.Last().IsFinalFrame && (framesList.Last().IsStrike || framesList.Last().IsSpare))
@@ -55,8 +55,8 @@ namespace BowlingGame.BizLogic.Repositories
             }
             else if (!string.IsNullOrWhiteSpace(bonusString) && lastFrame.IsBonusAllowed)
             {
-                FrameRepository framerepo = new FrameRepository();
-                framerepo.ProcessBonusStringToLastFrame(bonusString, lastFrame, startingPinsNumber);
+                FrameRepository _framerepo = new FrameRepository();
+                _framerepo.ProcessBonusStringToLastFrame(bonusString, lastFrame, startingPinsNumber);
             }                
         }
 
