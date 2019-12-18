@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BowlingGame.BizLogic
+namespace BowlingGame.BizLogic.Data
 {
     public class Frame
     {

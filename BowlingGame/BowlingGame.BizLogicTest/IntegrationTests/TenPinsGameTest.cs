@@ -1,6 +1,7 @@
 ﻿using System;
 using BowlingGame.BizLogic.Data;
 using BowlingGame.BizLogic.Games;
+using BowlingGame.BizLogic.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BowlingGame.BizLogicTest.IntegrationTests
@@ -684,13 +685,13 @@ namespace BowlingGame.BizLogicTest.IntegrationTests
         public void TestsFailedToCalculateWhenStartingPinsNumberIsZero()
         {
             //-- Arrange
-            TenPinsGame game = new TenPinsGame();
-            string gameInput = "X|7/|9-|x|-8|8/|-6|x|X|X||81";
+            Calculate _calculate = new Calculate();
             int startingPinsNumber = 0;
+            CommonGameData data = new CommonGameData(10, 10);
 
             try
             {
-                game.CalculateScore(startingPinsNumber);
+                _calculate.CalculateScore(data.Frames, startingPinsNumber);
             }
             catch (ArgumentException ex)
             {

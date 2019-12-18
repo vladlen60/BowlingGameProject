@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BowlingGame.BizLogic.Data;
+using System;
 
 namespace BowlingGame.BizLogic.Utilities
 {

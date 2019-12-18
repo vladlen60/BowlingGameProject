@@ -52,12 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Frame.cs" />
+    <Compile Include="Data\Frame.cs" />
     <Compile Include="Data\CommonGameData.cs" />
     <Compile Include="Games\FivePinsGame.cs" />
+    <Compile Include="Repositories\Calculate.cs" />
     <Compile Include="Repositories\FrameRepository.cs" />
     <Compile Include="Types\GameParserType.cs" />
-    <Compile Include="IGame.cs" />
+    <Compile Include="Games\IGame.cs" />
     <Compile Include="Games\TenPinsGame.cs" />
     <Compile Include="Repositories\GameRepository.cs" />
     <Compile Include="Program.cs" />

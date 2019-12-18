@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using BowlingGame.BizLogic;
+using BowlingGame.BizLogic.Data;
 using BowlingGame.BizLogic.Repositories;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

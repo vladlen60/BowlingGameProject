@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using BowlingGame.BizLogic.Data;
 using BowlingGame.BizLogic.Utilities;
 
 namespace BowlingGame.BizLogic.Repositories
