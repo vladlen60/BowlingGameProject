@@ -5,6 +5,7 @@ for evaluation test
 Please create a library in either C# or JavaScript keep score in a game of bowling. Write a program to score a game of Ten-Pin Bowling.
 
 **Input:** string (described below) representing a bowling game
+
 **Output:** integer score
 
 **The scoring rules**
@@ -22,10 +23,15 @@ The game score is the total of all frame scores.
 
 
 **Examples**
+
 X indicates a strike
+
 / indicates a spare
+
 '-' indicates a miss
+
 | indicates a frame boundary
+
 The characters after the || indicate bonus balls
 
 **---**
