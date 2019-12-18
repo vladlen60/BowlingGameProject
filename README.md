@@ -24,7 +24,7 @@ The game score is the total of all frame scores.
 **Examples**
 X indicates a strike
 / indicates a spare
-- indicates a miss
+'-' indicates a miss
 | indicates a frame boundary
 The characters after the || indicate bonus balls
 
