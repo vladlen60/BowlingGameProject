@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using BowlingGame.BizLogic.Data;
 using BowlingGame.BizLogic.Repositories;
 
@@ -23,7 +24,9 @@ namespace BowlingGame.BizLogic.Games
         public int ShowScore(string gameInput)
         {
             // TODO: Do some coding here
+            Console.WriteLine("The FipePins game is not implemented yet.");
             return 0;
+            throw new NotImplementedException("The FipePins game is not implemented yet.");
             //ProcessGameData(gameInput, _data.Frames, _data.MaxFramesNumber, _data.StartingPinsNumber);
             //return _calculate.CalculateScore(_data.Frames, _data.StartingPinsNumber);
         }

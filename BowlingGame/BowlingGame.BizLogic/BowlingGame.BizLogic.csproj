@@ -55,13 +55,13 @@
     <Compile Include="Data\Frame.cs" />
     <Compile Include="Data\CommonGameData.cs" />
     <Compile Include="Games\FivePinsGame.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Repositories\Calculate.cs" />
     <Compile Include="Repositories\FrameRepository.cs" />
     <Compile Include="Types\GameParserType.cs" />
     <Compile Include="Games\IGame.cs" />
     <Compile Include="Games\TenPinsGame.cs" />
     <Compile Include="Repositories\GameRepository.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\GameInputParser.cs" />
     <Compile Include="Utilities\ThrowCharProcessor.cs" />

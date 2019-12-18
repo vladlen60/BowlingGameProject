@@ -6,8 +6,29 @@ namespace BowlingGame.BizLogic
 {
     public static class Program
     {
+        private static IGame Game { get; set; }
+
+        private static void SetGame(string gameType)
+        {
+            gameType = gameType.Trim().ToLower();
+            switch (gameType)
+            {
+                case "tenpins":
+                    Game = new TenPinsGame();
+                    break;
+                case "fivepins":
+                    Game = new FivePinsGame();
+                    break;
+                default:
+                    throw new ArgumentException("Sorry, no such game supported.");
+            }
+        }
+
         public static void Main(string[] args)
         {
+            Console.WriteLine("Please specify game you want to play (FivePins, TenPins): ");
+            string gameType = Console.ReadLine();
+
             Console.WriteLine("#===================================#");
             Console.WriteLine("# Welcome to Ten-Pins Bowling! #");
             Console.WriteLine("#-----------------------#");
@@ -26,9 +47,10 @@ namespace BowlingGame.BizLogic
 
             foreach (var input in inputList)
             {
-                TenPinsGame game = new TenPinsGame();
+                SetGame(gameType);
+                //TenPinsGame game = new TenPinsGame();
                 Console.WriteLine("Game{1}: {0}", input, inputList.IndexOf(input));
-                Console.WriteLine("Score: " + game.ShowScore(input));
+                Console.WriteLine("Score: " + Game.ShowScore(input));
                 Console.WriteLine("#=====#");
             }
 
