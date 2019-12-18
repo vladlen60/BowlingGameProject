@@ -1,4 +1,0 @@
-C:\src\QA Transition - Projects\BowlingGameProject\BowlingGame\BowlingGame.BizLogic\bin\Debug\BowlingGame.BizLogic.exe
-C:\src\QA Transition - Projects\BowlingGameProject\BowlingGame\BowlingGame.BizLogic\bin\Debug\BowlingGame.BizLogic.pdb
-C:\src\QA Transition - Projects\BowlingGameProject\BowlingGame\BowlingGame.BizLogic\obj\Debug\BowlingGame.BizLogic.exe
-C:\src\QA Transition - Projects\BowlingGameProject\BowlingGame\BowlingGame.BizLogic\obj\Debug\BowlingGame.BizLogic.pdb

@@ -87,6 +87,8 @@ The End-user will use only .ShowScore() method. The 3rd party apps also will mos
 
 **The following diagram shows the flow of the program:**
 
+https://github.com/vladlen60/BowlingGameProject/blob/master/diagram.png
+
 ```flow
 st=>start: Program.cs
 io1=>inputoutput: gameInput
